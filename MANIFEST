@@ -1,0 +1,11 @@
+MANIFEST
+Changes
+t/04-nested.t.broken
+t/00-basic.t
+t/02-restart.t
+t/03-multiple.t
+t/01-simple.t
+Makefile.PL
+lib/Coro/Generator.pm
+README
+META.yml                                 Module meta-data (added by MakeMaker)
