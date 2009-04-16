@@ -8,14 +8,14 @@ my $outside = generator {
     my $x = 0;
     while(1) {
       $x++; $x++;
-      yield $x;
+      yield($x);
     }
   };
   while(1) {
     for my $i (0..3) {
-      yield $inside_even->();
+      yield($inside_even->());
     }
-    yield 0;
+    yield(0);
   }
 };
 

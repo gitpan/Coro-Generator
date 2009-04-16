@@ -10,13 +10,13 @@ Coro::Generator - Create generators using Coro
   use strict;
   use Coro::Generator;
 
-  $even = generator {
+  my $even = generator {
     my $x = 0;
     while(1) {
       $x++; $x++;
       yield $x;
     }
-  }
+  };
 
   for my $i (1..10) {
     say $even->();
@@ -38,7 +38,7 @@ use Coro;
 use Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT = qw(generator yield);
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our @yieldstack;
 our $retval;
@@ -55,7 +55,7 @@ sub generator (&) {
   $prev->transfer($coro);
   return sub {
     @params = @_;
-    push @yieldstack, [$coro, $prev, @_];
+    push @yieldstack, [$coro, $prev];
     $prev->transfer($coro);
     return $retval;
   };
@@ -65,7 +65,7 @@ sub yield {
   $retval = shift;
   my ($coro, $prev) = @{pop @yieldstack};
   $coro->transfer($prev);
-  return @params;
+  return wantarray ? @params : $params[0];
 }
 
 =head1 SEE ALSO
