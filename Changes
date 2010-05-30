@@ -1,10 +1,14 @@
 Revision history for Perl extension Coro::Generator.
 
+0.3.0 2010.05.30
+  - Allow renaming of exports (thanks Chocolateboy!)
+  - Add documentation
+  - Enable nested generator test (and maybe fixed it?)
+
 0.02 2009.04.16
   - Fix synopsis
   - Add some more tests
 
-0.01  Wed Apr 16 12:14:46 2008
-	- original version; created by h2xs 1.23 with options
-		-X -n Coro::Generator
+0.01 2008.04.16
+	- original version
 

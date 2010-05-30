@@ -1,12 +1,14 @@
 Changes
-MANIFEST
-Makefile.PL
-README
 lib/Coro/Generator.pm
+Makefile.PL
+MANIFEST
+README
 t/00-basic.t
 t/01-simple.t
 t/02-restart.t
 t/03-multiple.t
 t/04-params.t
-t/05-nested.t.broken
+t/05-nested.t
+t/07-alias1.t
+t/07-alias2.t
 META.yml                                 Module meta-data (added by MakeMaker)
